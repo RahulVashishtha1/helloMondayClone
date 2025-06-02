@@ -499,19 +499,19 @@ body.busy * {
 	transform: translateY(0); /* Remove the -50% transform */
 	transition: all 0.4s;
 }
-
+/* 
 .hamburger.close {
 	z-index: 11;
 	right: -15px;
-	top: 20px; /* Match the top value of the regular hamburger */
+	top: 20px; 
 	opacity: 0;
 	visibility: hidden;
-}
-
+} */
+/* 
 .hamburger.close.active {
 	opacity: 1;
 	visibility: visible;
-}
+} */
 
 /* Optional: Add a class to hide the hamburger */
 .hidden-opacity {
@@ -933,4 +933,52 @@ body.busy * {
 		margin-bottom: 0;
 		width: 23%;
 	}
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.hamburger.hidden-opacity {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Remove the original hover zone since we're creating a new container */
+#right-hover-zone {
+  display: none;
+}
+
+/* Smooth transitions for better UX */
+.hamburger svg {
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover svg {
+  transform: scale(1.1);
+}
+
+
+.hamburger.close {
+	position: fixed;
+	top: 50%;
+	right: 0;
+	transform: translateY(-70%);
+	transition: opacity 0.3s ease;
+	z-index: 1001;
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.hamburger.close.active {
+	opacity: 1;
+	visibility: visible;
 }
