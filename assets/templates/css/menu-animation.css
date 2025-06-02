@@ -1,0 +1,163 @@
+/* Menu Toggle Button */
+.menu-toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100vh;
+    z-index: 1000;
+    cursor: pointer;
+    overflow: visible; /* Allow content to overflow */
+}
+
+.menu-blob {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px; /* Match the toggle width */
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Ensure the blob path fills the SVG */
+#menu-blob-path {
+    fill: #000;
+    transform-origin: top right;
+    transform: scale(0.5); /* Scale down the path */
+}
+
+.menu-icon {
+    position: absolute;
+    top: 30px; /* Position icon at the top */
+    right: 30px;
+    width: 30px;
+    height: 20px;
+    z-index: 1001;
+}
+
+.menu-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#line1 {
+    top: 0;
+}
+
+#line2 {
+    top: 9px;
+}
+
+#line3 {
+    top: 18px;
+}
+
+/* Full Screen Menu */
+.header-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 999;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.header-menu.active {
+    pointer-events: all;
+}
+
+.menu-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+
+.header-menu.active .menu-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-inner {
+    width: 100%;
+    padding: 80px 0;
+}
+
+/* Menu Navigation */
+.menu-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 80px 0;
+}
+
+.menu-item {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.menu-item a {
+    display: inline-block;
+    font-family: ClarendonBTWXX-Light;
+    font-size: 60px;
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(100%);
+    transition: transform 0.5s, padding 0.3s;
+}
+
+.header-menu.active .menu-item a {
+    transform: translateY(0);
+}
+
+.menu-item a:hover {
+    padding-left: 20px;
+}
+
+/* Menu Footer */
+.menu-footer {
+    overflow: hidden;
+}
+
+.menu-social {
+    transform: translateY(100%);
+    transition: transform 0.5s;
+}
+
+.header-menu.active .menu-social {
+    transform: translateY(0);
+}
+
+.social-link {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #fff;
+}
+
+/* Hide original elements */
+.hamburger {
+    display: none !important;
+}
+
+
+
